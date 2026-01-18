@@ -3,277 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pro Tools Hub</title>
-  <meta name="description" content="100+ Professional Online Tools – Fast, Secure, Category-wise" />
+  <title>AI Tools Hub – Professional Directory</title>
+  <meta name="description" content="Top AI Tools Directory – Arts, Writing, Coding, Video, Productivity" />
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --muted: #94a3b8;
-      --text: #e5e7eb;
-      --accent: #38bdf8;
-      --border: #1f2933;
+    :root{
+      --bg:#020617;--card:#020617;--border:#1f2937;--text:#e5e7eb;--muted:#94a3b8;--accent:#38bdf8;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: linear-gradient(180deg, #020617, #020617 40%, #020617);
-      color: var(--text);
-    }
-    header {
-      padding: 20px 32px;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: rgba(2,6,23,0.9);
-      backdrop-filter: blur(10px);
-      z-index: 10;
-    }
-    header h1 { margin: 0; font-size: 24px; }
-    header p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
-
-    .container { padding: 32px; max-width: 1400px; margin: auto; }
-
-    .search {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: #020617;
-      color: var(--text);
-      font-size: 16px;
-      margin-bottom: 28px;
-    }
-
-    .category {
-      margin-bottom: 40px;
-    }
-
-    .category h2 {
-      font-size: 20px;
-      margin-bottom: 16px;
-      border-left: 4px solid var(--accent);
-      padding-left: 12px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, #020617, #020617);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
-
-    .card h3 { margin: 0 0 8px; font-size: 16px; }
-    .card p { margin: 0 0 14px; font-size: 13px; color: var(--muted); }
-
-    .card button {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
-      background: var(--accent);
-      color: #020617;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 20px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Modal */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(2,6,23,0.8);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-    }
-    .modal.active { display: flex; }
-    .modal-content {
-      background: #020617;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      width: 100%;
-      max-width: 520px;
-      padding: 24px;
-    }
-    .modal-content h3 { margin-top: 0; }
-    .modal-content textarea, .modal-content input {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #020617;
-      color: var(--text);
-    }
-    .close {
-      float: right;
-      cursor: pointer;
-      color: var(--muted);
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,Segoe UI,Roboto;background:linear-gradient(180deg,#020617,#020617);color:var(--text)}
+    header{position:sticky;top:0;background:rgba(2,6,23,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:20px 32px;z-index:10}
+    header h1{margin:0;font-size:24px}
+    header p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    .container{max-width:1400px;margin:auto;padding:32px}
+    .search{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:#020617;color:var(--text);font-size:16px;margin-bottom:30px}
+    .category{margin-bottom:46px}
+    .category h2{margin:0 0 18px;font-size:20px;border-left:4px solid var(--accent);padding-left:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+    .card{background:linear-gradient(180deg,#020617,#020617);border:1px solid var(--border);border-radius:16px;padding:20px;transition:.25s}
+    .card:hover{transform:translateY(-4px);border-color:var(--accent)}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0 0 16px;font-size:13px;color:var(--muted)}
+    .card a{display:block;text-align:center;text-decoration:none;padding:11px;border-radius:10px;background:var(--accent);color:#020617;font-weight:600}
+    footer{text-align:center;border-top:1px solid var(--border);padding:22px;color:var(--muted);font-size:13px}
   </style>
 </head>
 <body>
-  <header>
-    <h1>⚙️ Pro Tools Hub</h1>
-    <p>100+ Fast, Secure & Professional Online Tools – Category Wise</p>
-  </header>
+<header>
+  <h1>🤖 AI Tools Hub</h1>
+  <p>Professional AI Tools Directory – Tap & Open Official Websites</p>
+</header>
 
-  <div class="container">
-    <input id="search" class="search" placeholder="Search tools..." />
+<div class="container">
+  <input id="search" class="search" placeholder="Search AI tools..." />
+  <div id="app"></div>
+</div>
 
-    <div id="app"></div>
-  </div>
+<footer>© 2026 AI Tools Hub • GitHub Ready • Single File</footer>
 
-  <footer>
-    © 2026 Pro Tools Hub • Built for GitHub • Single File • Zero Glitch Architecture
-  </footer>
+<script>
+const data=[
+  {category:"AI Art & Design",tools:[
+    {name:"Midjourney",desc:"AI image generation (Discord based)",url:"https://www.midjourney.com"},
+    {name:"Leonardo AI",desc:"AI art & asset generation",url:"https://leonardo.ai"},
+    {name:"Playground AI",desc:"AI art & design tool",url:"https://playgroundai.com"},
+    {name:"Adobe Firefly",desc:"AI powered creative tools",url:"https://www.adobe.com/firefly"}
+  ]},
+  {category:"AI Writing & Chat",tools:[
+    {name:"ChatGPT",desc:"AI chat & writing assistant",url:"https://chat.openai.com"},
+    {name:"Claude AI",desc:"Advanced AI writing & reasoning",url:"https://claude.ai"},
+    {name:"Jasper AI",desc:"AI marketing & content writing",url:"https://www.jasper.ai"},
+    {name:"Copy.ai",desc:"AI copywriting tool",url:"https://www.copy.ai"}
+  ]},
+  {category:"AI Video & Audio",tools:[
+    {name:"Pictory",desc:"Text to video using AI",url:"https://pictory.ai"},
+    {name:"Runway ML",desc:"AI video generation & editing",url:"https://runwayml.com"},
+    {name:"Descript",desc:"AI audio & video editor",url:"https://www.descript.com"},
+    {name:"ElevenLabs",desc:"AI voice generation",url:"https://elevenlabs.io"}
+  ]},
+  {category:"AI Developer Tools",tools:[
+    {name:"GitHub Copilot",desc:"AI coding assistant",url:"https://github.com/features/copilot"},
+    {name:"Replit AI",desc:"AI powered coding platform",url:"https://replit.com"},
+    {name:"Cursor",desc:"AI code editor",url:"https://cursor.sh"},
+    {name:"Codeium",desc:"Free AI code assistant",url:"https://codeium.com"}
+  ]}
+];
 
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">✖</span>
-      <h3 id="modalTitle"></h3>
-      <div id="modalBody"></div>
-    </div>
-  </div>
+const app=document.getElementById('app');
+const search=document.getElementById('search');
 
-  <script>
-    const toolsData = [
-      {
-        category: "Text Tools",
-        tools: [
-          {
-            name: "Word Counter",
-            desc: "Count words & characters instantly",
-            run: () => {
-              openModal("Word Counter", `
-                <textarea id='wcText' rows='6' placeholder='Enter text'></textarea>
-                <button onclick="countWords()">Count</button>
-                <p id='wcResult'></p>
-              `);
-            }
-          },
-          {
-            name: "Text Uppercase",
-            desc: "Convert text to UPPERCASE",
-            run: () => {
-              openModal("Uppercase Converter", `
-                <textarea id='upText' rows='6'></textarea>
-                <button onclick="toUpper()">Convert</button>
-              `);
-            }
-          }
-        ]
-      },
-      {
-        category: "Developer Tools",
-        tools: [
-          {
-            name: "JSON Formatter",
-            desc: "Format & validate JSON",
-            run: () => {
-              openModal("JSON Formatter", `
-                <textarea id='jsonText' rows='6'></textarea>
-                <button onclick="formatJSON()">Format</button>
-              `);
-            }
-          },
-          {
-            name: "Base64 Encoder",
-            desc: "Encode text to Base64",
-            run: () => {
-              openModal("Base64 Encoder", `
-                <textarea id='b64Text' rows='6'></textarea>
-                <button onclick="encodeB64()">Encode</button>
-              `);
-            }
-          }
-        ]
-      }
-    ];
+function render(filter=""){
+  app.innerHTML="";
+  data.forEach(cat=>{
+    const tools=cat.tools.filter(t=>t.name.toLowerCase().includes(filter));
+    if(!tools.length)return;
+    const section=document.createElement('div');section.className='category';
+    section.innerHTML=`<h2>${cat.category}</h2>`;
+    const grid=document.createElement('div');grid.className='grid';
+    tools.forEach(t=>{
+      const card=document.createElement('div');card.className='card';
+      card.innerHTML=`<h3>${t.name}</h3><p>${t.desc}</p><a href="${t.url}" target="_blank">Open Tool</a>`;
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);app.appendChild(section);
+  });
+}
 
-    const app = document.getElementById('app');
-    const search = document.getElementById('search');
-
-    function render(filter = "") {
-      app.innerHTML = "";
-      toolsData.forEach(cat => {
-        const filtered = cat.tools.filter(t => t.name.toLowerCase().includes(filter));
-        if (!filtered.length) return;
-
-        const section = document.createElement('div');
-        section.className = 'category';
-        section.innerHTML = `<h2>${cat.category}</h2>`;
-
-        const grid = document.createElement('div');
-        grid.className = 'grid';
-
-        filtered.forEach(tool => {
-          const card = document.createElement('div');
-          card.className = 'card';
-          card.innerHTML = `
-            <h3>${tool.name}</h3>
-            <p>${tool.desc}</p>
-            <button>Open Tool</button>
-          `;
-          card.querySelector('button').onclick = tool.run;
-          grid.appendChild(card);
-        });
-
-        section.appendChild(grid);
-        app.appendChild(section);
-      });
-    }
-
-    search.addEventListener('input', e => render(e.target.value.toLowerCase()));
-
-    function openModal(title, body) {
-      document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalBody').innerHTML = body;
-      document.getElementById('modal').classList.add('active');
-    }
-    function closeModal() {
-      document.getElementById('modal').classList.remove('active');
-    }
-
-    // Tool Logic
-    function countWords() {
-      const t = document.getElementById('wcText').value;
-      const words = t.trim() ? t.trim().split(/\s+/).length : 0;
-      document.getElementById('wcResult').innerText = `Words: ${words} | Characters: ${t.length}`;
-    }
-    function toUpper() {
-      const el = document.getElementById('upText');
-      el.value = el.value.toUpperCase();
-    }
-    function formatJSON() {
-      const el = document.getElementById('jsonText');
-      try { el.value = JSON.stringify(JSON.parse(el.value), null, 2); }
-      catch { alert('Invalid JSON'); }
-    }
-    function encodeB64() {
-      const el = document.getElementById('b64Text');
-      el.value = btoa(el.value);
-    }
-
-    render();
-  </script>
+search.addEventListener('input',e=>render(e.target.value.toLowerCase()));
+render();
+</script>
 </body>
 </html>
