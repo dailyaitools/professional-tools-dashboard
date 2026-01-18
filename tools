@@ -1,0 +1,49 @@
+import React from "react";
+import { Search, Settings, BarChart, Shield, Cloud, Cpu, Database, Image, Video, FileText, Mail, Phone, Calendar, Clock, Map, Lock, User, Users, ShoppingCart, CreditCard, Truck, Package, Wrench } from "lucide-react";
+
+const icons = [Search, Settings, BarChart, Shield, Cloud, Cpu, Database, Image, Video, FileText, Mail, Phone, Calendar, Clock, Map, Lock, User, Users, ShoppingCart, CreditCard, Truck, Package, Wrench];
+
+const tools = Array.from({ length: 108 }).map((_, i) => ({
+  id: i + 1,
+  name: `Tool ${i + 1}`,
+  description: "Professional grade utility for business & productivity",
+  Icon: icons[i % icons.length]
+}));
+
+export default function ToolsDashboard() {
+  return (
+    <div className="min-h-screen bg-slate-50 p-6">
+      <header className="max-w-7xl mx-auto mb-8">
+        <h1 className="text-3xl font-bold text-slate-800">Professional Tools Suite</h1>
+        <p className="text-slate-600 mt-1">100+ tools • Clean UI • Enterprise-ready</p>
+        <div className="mt-4 flex gap-3">
+          <input
+            placeholder="Search tools..."
+            className="w-full max-w-md rounded-xl border border-slate-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400"
+          />
+          <button className="rounded-xl bg-slate-900 text-white px-4 py-2">Settings</button>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+          {tools.map((tool) => (
+            <div
+              key={tool.id}
+              className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-lg transition"
+            >
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-100 group-hover:bg-slate-900 transition">
+                <tool.Icon className="w-6 h-6 text-slate-700 group-hover:text-white" />
+              </div>
+              <h3 className="mt-4 font-semibold text-slate-800">{tool.name}</h3>
+              <p className="text-sm text-slate-500 mt-1">{tool.description}</p>
+              <button className="mt-4 w-full rounded-xl border border-slate-200 py-2 text-sm font-medium hover:bg-slate-50">
+                Open Tool
+              </button>
+            </div>
+          ))}
+        </div>
+      </main>
+    </div>
+  );
+}
